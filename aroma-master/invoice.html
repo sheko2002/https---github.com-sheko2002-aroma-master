@@ -117,22 +117,20 @@
         <div class="comment-form">
             <form>
                 <div class="form-group form-inline">
-                    <div class="form-group col-lg-6 col-md-6 name">
-                        <select class="form-control" id="inputGroupSelect01">
-                            <option selected>Customer</option>
-                            <option value="1">Ahmed</option>
-                            <option value="2">Hassan</option>
-                        </select>
+                    <div class="form-group col-lg-6 col-md-6 name"><input type="Customer" class="form-control"
+                            id="Customer" placeholder="Customer" onfocus="this.placeholder = ''"
+                            onblur="this.placeholder = 'Customer'">
                     </div>
                     <div class="form-group col-lg-6 col-md-6 date">
                         <input type="Invoice Date" class="form-control" id="Invoice Date" placeholder="Invoice Date"
                             onfocus="this.placeholder = ''" onblur="this.placeholder = 'Invoice Date'">
                     </div>
+
                 </div>
                 <div class="form-group form-inline">
                     <div class="form-group col-lg-6 col-md-6 name">
-                        <input type="Invoice Date" class="form-control" id="Invoice Date" placeholder="Invoice Date"
-                            onfocus="this.placeholder = ''" onblur="this.placeholder = 'Invoice Date'">
+                        <input type="Due Date" class="form-control" id="Due Date" placeholder="Due Date"
+                            onfocus="this.placeholder = ''" onblur="this.placeholder = 'Due Date'">
                     </div>
                 </div>
                 <div class="form-group">
@@ -152,8 +150,8 @@
             <div class="order_details_table">
                 <h2>Invoice lines</h2>
                 <div class="table-responsive">
-                     <table id="invoice-table" class="table invoice-table-tabel-border">
-                        <thead>
+                    <table id="invoice-table" class="table invoice-table-tabel-border">
+                        <thead id="invoice-table-head">
                             <tr>
                                 <th>Product</th>
                                 <th>Label</th>
@@ -162,53 +160,56 @@
                             </tr>
                         </thead>
                         <tbody id="invoice-table-body">
-                                <tr>
-                                    <td>iphone</td>
-                                    <td>iphone</td>
-                                    <td>2.00</td>
-                                    <td>1.00</td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td>1.00</td>
-                                    <td>0.00</td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td>1.00</td>
-                                    <td>0.00</td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td>1.00</td>
-                                    <td>0.00</td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td>1.00</td>
-                                    <td>0.00</td>
-                                </tr>
+                            <tr>
+                                <td contenteditable="true">iphone</td>
+                                <td contenteditable="true">iphone</td>
+                                <td contenteditable="true">2.00</td>
+                                <td contenteditable="true">1.00</td>
+                            </tr>
+                            <tr>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true">1.00</td>
+                                <td contenteditable="true">0.00</td>
+                            </tr>
+                            <tr>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true">1.00</td>
+                                <td contenteditable="true">0.00</td>
+                            </tr>
+                            <tr>
+                            <tr>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true">1.00</td>
+                                <td contenteditable="true">0.00</td>
+                            </tr>
+                            <tr>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true"></td>
+                            </tr>
                         </tbody>
                     </table>
-                    
+
                     <!-- Add new product button -->
                     <button id="add-product-btn" class="btn btn-primary">Add new product</button>
-                    
+
                     <script>
                         const tableBody = document.getElementById('invoice-table-body');
                         const addProductBtn = document.getElementById('add-product-btn');
-                    
+
                         addProductBtn.addEventListener('click', () => {
                             const newRow = tableBody.insertRow();
                             newRow.innerHTML = `
-                            <td></td>
-                            <td></td>
-                            <td>1.00</td>
-                            <td>0.00</td>
+                             <tr>
+                                  <td contenteditable="true"></td>
+                                  <td contenteditable="true"></td>
+                                  <td contenteditable="true">1.00</td>
+                                 <td contenteditable="true">0.00</td>
+                             </tr>
                             `;
                         });
                     </script>
